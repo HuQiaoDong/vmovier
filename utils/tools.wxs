@@ -1,0 +1,22 @@
+var parseCates = function (p) {
+  if (p) {
+    return p.map(function (item) {
+      return item.catename;
+    })
+  } else {
+    return '';
+  }
+}
+var parseTime = function (t) {
+  if (t%60<10) {
+    return parseInt(t / 60) + "'" +"0"+ t % 60 + '"';
+  }
+  else{
+    return parseInt(t / 60) + "'" + t % 60 + '"';
+  }
+}
+
+module.exports = {
+  parseCates: parseCates,
+  parseTime: parseTime,
+}

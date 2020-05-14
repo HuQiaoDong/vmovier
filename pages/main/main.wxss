@@ -1,0 +1,70 @@
+/* pages/main/main.wxss */
+/* .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+} */
+.van-nav-bar .van-nav-bar__title {
+  width: 100%;
+  max-width: 100%;
+}
+
+.van-tabs__nav {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.van-nav-bar__left,
+.van-nav-bar__right {
+  z-index: 9;
+}
+
+van-overlay .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}
+.van-tabs__wrap.van-hairline--top-bottom .van-tabs__scroll{
+  background: black;
+  color: white;
+}
+.van-tabs__wrap.van-hairline--top-bottom:after {
+  border-width: 0px 0;
+}
+.van-ellipsis.van-tab .van-ellipsis{
+  /* color: #888888; */
+}
+.van-ellipsis.van-tab.van-tab--active{
+  /* color: white !important; */
+  color: var(--tab-active-text-color,white);
+  font-weight: var(--font-weight-bold,400);
+}
+.van-tabs__nav.van-tabs__nav--line .van-tabs__line{
+  width: 38px !important;
+  background-color: var(--tabs-bottom-bar-color,white);
+  left: -3px;
+}
+  
+van-grid .van-grid-item__content--square {
+  padding: 0;
+}
+van-grid .van-grid-item__content--square text{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 25px;
+  color: white;
+}
+van-grid .van-grid-item__content--square image{
+  filter: brightness(0.7);
+}

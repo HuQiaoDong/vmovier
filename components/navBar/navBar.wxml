@@ -1,0 +1,28 @@
+<!--components/navBar/navBar.wxml-->
+<view class="weui-navigation-bar">
+	<view class="weui-navigation-bar__placeholder" style="visible: hidden;"></view>
+	<view class="weui-navigation-bar__inner">
+
+		<view class='weui-navigation-bar__left'>
+			<view class="weui-navigation-bar__buttons">
+				<view bindtap="back" class="weui-navigation-bar__button weui-navigation-bar__btn_goback"></view>
+			</view>
+		</view>
+
+		<view class='weui-navigation-bar__center'>
+			<!-- <view class="weui-navigation-bar__loading">
+			</view> -->
+      <view class="slider-bar {{sliderIndex}}"></view>
+      <navigator  url="../find/find?index='-15'" class="{{routerData == 'pages/find/find' ? 'active' : ''}}" open-type="switchTab" id="find">发现</navigator>
+      <navigator  url="../channel/channel?index='45'" class="{{routerData == 'pages/channel/channel' ? 'active' : ''}}" open-type="switchTab" id="channel">频道</navigator>
+      <navigator  url="../aboutme/aboutme?index='106'" class="{{routerData == 'pages/aboutme/aboutme' ? 'active' : ''}}" open-type="switchTab" id="aboutme">我的</navigator>
+		</view>
+
+		<view class='weui-navigation-bar__right'>
+		</view>
+	</view>
+</view>
+<text>{{routerData}}</text>
+
+
+

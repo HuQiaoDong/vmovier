@@ -1,0 +1,4 @@
+<!--pages/channel/channel.wxml-->
+<nav-bar routerData = "{{route}}"></nav-bar>
+<text>频道</text>
+<text>{{router}}</text>

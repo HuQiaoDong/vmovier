@@ -1,0 +1,9 @@
+<!--pages/posts/posts.wxml-->
+<post-list-card cardData="{{item}}" wx:for="{{cateData}}"></post-list-card>
+<view class="loading" hidden="{{scrollLoading}}">
+  <van-loading color="#1989fa" size="16px" class="loadingBar" text-size="14px">正在加载...</van-loading>
+</view>
+<view class="loading" hidden="{{!isEnd}}">
+  <text >没有更多内容了</text>
+</view>
+

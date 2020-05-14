@@ -1,0 +1,25 @@
+<!--pages/main/main.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange" animated>
+	<!-- <van-tab title="">
+		<van-icon name="calender-o"></van-icon>
+	</van-tab> -->
+
+	<van-tab title="发现">
+
+	</van-tab>
+	<van-tab title="频道">
+		<van-grid column-num="2" border="{{ false }}" gutter="0" square>
+			<van-grid-item use-slot data-cateid="{{item.cateid?item.cateid:''}}" wx:for="{{cateList}}" wx:key="index" bindtap="routeToPostList" data-tab="{{item.tab ? item.tab : ''}}">
+				<image style="width: 100%;" fit="cover" src="{{item.icon}}" />
+				<text>#{{item.catename}}#</text>
+			</van-grid-item>
+		</van-grid>
+	</van-tab>
+	<van-tab title="我的" bind:tap="toAboutMePage()">我的</van-tab>
+</van-tabs>
+<!-- <van-button type="primary" bind:click="onClickShow">显示遮罩层</van-button> -->
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+	<view class="wrapper">
+		<van-loading color="#1989fa" />
+	</view>
+</van-overlay>

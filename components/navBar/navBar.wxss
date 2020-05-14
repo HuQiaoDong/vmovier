@@ -1,0 +1,51 @@
+/* components/navBar/navBar.wxss */
+.active{
+  color: white;
+  /* border-bottom: 2px solid white; */
+}
+.weui-navigation-bar__placeholder{
+  background-color: black !important;
+}
+.weui-navigation-bar__center{
+  color: #888888 !important;
+}
+.weui-navigation-bar__inner {
+  top:5px !important;
+}
+.weui-navigation-bar__inner .weui-navigation-bar__center {
+  justify-content: space-between !important;
+}
+navigator{
+  height: 30px;
+}
+.slider-bar{
+  position: absolute;
+  left: -15px;
+  top: 0px;
+  width: 35px;
+  height: 98%;
+  border-bottom: 2px solid white;
+
+  /* background: white; */
+}
+.slider-bar.middle{
+  transition: all 1s;
+  left: 45px;
+}
+.slider-bar.left{
+  transition: all 1s;
+  left: -15px;
+}
+.slider-bar.right{
+  transition: all 1s;
+  left: 106px;
+}
+#find{
+  position: relative;
+  left: -15px;
+}
+#aboutme{
+  position: relative;
+  right: -15px;
+}
+@import '../../style/weui.wxss'

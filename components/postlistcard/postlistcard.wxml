@@ -1,0 +1,18 @@
+<!--components/postlistcard/postlistcard.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools">
+</wxs>
+<view>
+	<view class="card">
+		<image src="{{cardData.image}}"></image>
+		<view class="info">
+			<view class="leibie">
+				<view>{{tools.parseCates(cardData.cates)}}/</view>
+				<view>{{tools.parseTime(cardData.duration)}}</view>
+			</view>
+			<text class="title">{{cardData.title}}</text>
+
+		</view>
+	</view>
+
+
+</view>

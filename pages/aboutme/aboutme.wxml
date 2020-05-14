@@ -1,0 +1,4 @@
+<!--pages/aboutme/aboutme.wxml-->
+<nav-bar routerData = "{{route}}"></nav-bar>
+<text>我的</text>
+<text>{{router}}</text>

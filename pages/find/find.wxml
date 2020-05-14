@@ -1,0 +1,6 @@
+<!--pages/find/find.wxml-->
+<nav-bar routerData = "{{route}}"></nav-bar>
+<view>发现</view>
+<text>{{router}}</text>
+<van-button type="primary">按钮</van-button>
+
