@@ -1,4 +1,19 @@
 /* pages/posts/posts.wxss */
+.posts{
+  filter: brightness(1);
+  position: relative;
+}
+.posts .mask{
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: 0px;
+  z-index:999;
+}
+#card4{
+  color: #888888;
+}
 .loading{
   height: 25px;
   background: white;
@@ -13,4 +28,49 @@
   margin: auto;
   color: #888888;
   font-size: 14px;
+}
+.image{
+  width: 100vw;
+}
+.image>image{
+  width: 100%;
+}
+.text-content{
+  padding: 10px 10px;
+  font-size: 14px;
+  color: #333333;
+  text-align: center;
+}
+.text-content .title{
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.text-content .fenlei{
+  color: #888888;
+  font-size: 12px;
+  margin-bottom: 40px;
+}
+.text-content .intro{
+
+}
+/* 横向滚动 */
+.page-section-spacing{
+  margin-top: 60rpx;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view_H .scroll-view-item_H image{
+  height: 100%;
+  width: 100%;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 40vw;
+  height: 200rpx;
+  margin-right: 10px;
 }

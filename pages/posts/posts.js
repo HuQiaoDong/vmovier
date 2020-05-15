@@ -9,7 +9,9 @@ Page({
     page: 1,
     cateId: null,
     scrollLoading: true,
-    isEnd: false
+    isEnd: false,
+
+    toView: 'green'
   },
 
   /**
@@ -52,10 +54,27 @@ Page({
       console.log(this.data.cateData);
     }
   },
+  getShowContent(e){
+    console.log('gggkkk');
+    console.log(e.detail);
+    
+    this.setData({
+      postsHidden:e.detail,
+    })
+  },
+  getPostData(e){
+    console.log(e.detail);
+    if (e.detail) {
+      this.setData({
+        postData:e.detail,
+      })
+    }
+  },
   getPostCardInfo(id) {
     this.data.scrollLoading = true;
     wx.request({
-      url: 'https://api.kele8.cn/agent/https://app.vmovier.com/apiv3/post/getPostInCate?p=' + this.data.page + '&size=10&cateid=' + id,
+      // https://api.kele8.cn/agent/
+      url: 'https://app.vmovier.com/apiv3/post/getPostInCate?p=' + this.data.page + '&size=10&cateid=' + id,
       success: (response) => {
         this.afterSuccess(response)
       },
@@ -135,6 +154,50 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return {
+      title: 'scroll-view',
+      path: 'page/component/pages/scroll-view/scroll-view'
+    }
+  },
+  isMaskShow(e){
+    this.setData({
+      maskShow:e.detail
+    }) 
+  },
+  // 横向滚动
+  upper(e) {
+    console.log(e)
+  },
 
+  lower(e) {
+    console.log(e)
+  },
+
+  scroll(e) {
+    console.log(e)
+  },
+
+  scrollToTop() {
+    this.setAction({
+      scrollTop: 0
+    })
+  },
+
+  tap() {
+    for (let i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.toView) {
+        this.setData({
+          toView: order[i + 1],
+          scrollTop: (i + 1) * 200
+        })
+        break
+      }
+    }
+  },
+
+  tapMove() {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
   }
 })

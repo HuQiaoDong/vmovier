@@ -1,9 +1,43 @@
 <!--pages/posts/posts.wxml-->
-<post-list-card cardData="{{item}}" wx:for="{{cateData}}"></post-list-card>
-<view class="loading" hidden="{{scrollLoading}}">
-  <van-loading color="#1989fa" size="16px" class="loadingBar" text-size="14px">正在加载...</van-loading>
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<view hidden="{{postsHidden}}" class="posts">
+	<view class="mask" style="z-index:{{maskShow ? 999 : 0}}"></view>
+	<post-list-card cardData="{{item}}" wx:for="{{cateData}}" wx:key="{{index}}" data-cardData="{{item}}" id="card{{index+1}}" elId="card{{index+1}}" bind:show-content="getShowContent" bind:trans-post-data="getPostData" bind:mask-show="isMaskShow"></post-list-card>
 </view>
-<view class="loading" hidden="{{!isEnd}}">
-  <text >没有更多内容了</text>
+<view hidden="{{!postsHidden}}">
+	<view class="image">
+		<image src="{{postData.image}}"></image>
+	</view>
+	<view class="text-content">
+		<view class="title">{{postData.title}}</view>
+		<view class="fenlei">{{postData.cate[0]}}&npsb;/&npsb;{{tools.parseTime(postData.duration)}}</view>
+		<view class="intro">{{postData.intro}}</view>
+		<view wx:for="{{postData.relate_video}}">
+			<view class="v-title">{{item.name}}</view>
+
+			<!-- <view class="page-section">
+				<view class="page-section-title">
+					<text>Horizontal Scroll\n横向滚动</text>
+				</view>
+				<view class="page-section-spacing">
+
+				</view>
+			</view> -->
+			<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+				<!-- <view id="demo1" class="scroll-view-item_H demo-text-1">1</view>
+				<view id="demo2" class="scroll-view-item_H demo-text-2">2</view>
+				<view id="demo3" class="scroll-view-item_H demo-text-3">3</view> -->
+				<view wx:for="{{item.list}}" id="demo1" class="scroll-view-item_H">
+							<image src="{{item.image}}"></image>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
 </view>
 
+<view class="loading" hidden="{{scrollLoading}}">
+	<van-loading color="#1989fa" size="16px" class="loadingBar" text-size="14px">正在加载...</van-loading>
+</view>
+<view class="loading" hidden="{{!isEnd}}">
+	<text >没有更多内容了</text>
+</view>

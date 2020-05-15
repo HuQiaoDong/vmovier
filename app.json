@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/main/main",
-    "pages/posts/posts"
+    "pages/posts/posts",
+    "pages/content/content"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,6 +19,8 @@
     "van-loading": "@vant/weapp/loading/index",
     "van-grid": "@vant/weapp/grid/index",
     "van-grid-item": "@vant/weapp/grid-item/index",
-    "van-icon": "@vant/weapp/icon/index"
+    "van-icon": "@vant/weapp/icon/index",
+    "van-transition": "@vant/weapp/transition/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index"
   }
 }
