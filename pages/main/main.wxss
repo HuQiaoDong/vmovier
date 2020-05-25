@@ -68,3 +68,63 @@ van-grid .van-grid-item__content--square text{
 van-grid .van-grid-item__content--square image{
   filter: brightness(0.7);
 }
+
+/* 发现页 */
+.title{
+  text-align: center;
+}
+
+.swipter-item{
+  position: relative;
+}
+.content image{
+  filter: brightness(0.8);
+}
+.info{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+}
+.info .type{
+  font-size: 12px;
+  width: 40px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid white;
+}
+.info .desc{
+  font-size: 12px;
+}
+.info .albumTitle{
+  padding-top: 8px;
+}
+
+/* 遮罩层 */
+.mask{
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: -50px;
+  z-index:999;
+}
+.nav{
+  position: relative;
+  z-index: 1;
+}
+.page-section-spacing{
+  margin-top: 0px !important;
+}
+.image{
+  position: relative;
+}
+.image .prev{
+  position: absolute;
+  top: 10px;
+  left:10px;
+  color: white;
+  font-size: 25px;
+  z-index: 1;
+}
+
+@import '../posts/posts.wxss'

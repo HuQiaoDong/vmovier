@@ -6,23 +6,24 @@
 </view>
 <view hidden="{{!postsHidden}}">
 	<view class="image">
-		<image src="{{postData.image}}"></image>
+		<image src="{{postData.image}}" hidden="{{postsHidden}}"></image>
+		<video id="myVideo" object-fit="fill" style="width:100%" poster="{{postData.image}}" src="https://api.kele8.cn/pic/{{postData.content_video[0].progressive[postData.content_video[0].progressive.length-1].url}}" show-center-play-btn='{{ture}}' show-play-btn="{{true}}" controls vx:if="{{postData}}"></video>
 	</view>
-	<view class="text-content">
+	<view class="text-content" wx:if="{{postData}}">
 		<view class="title">{{postData.title}}</view>
-		<view class="fenlei">{{postData.cate[0]}}&npsb;/&npsb;{{tools.parseTime(postData.duration)}}</view>
+		<view class="fenlei">{{postData.cate[0]}} / {{tools.parseTime(postData.duration)}}</view>
 		<view class="intro">{{postData.intro}}</view>
+		<view class="author" vx:if="postData.author">
+		 <image src="{{postData.author.profile.avatar}}"></image>
+		 <view class="author-info">
+		   <view class="author-name">{{postData.author.profile.username}}</view>
+		   <view class="roles">{{postData.author.roles}}</view>
+		 </view>
+		</view>
 		<view wx:for="{{postData.relate_video}}">
+
 			<view class="v-title">{{item.name}}</view>
 
-			<!-- <view class="page-section">
-				<view class="page-section-title">
-					<text>Horizontal Scroll\n横向滚动</text>
-				</view>
-				<view class="page-section-spacing">
-
-				</view>
-			</view> -->
 			<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
 				<!-- <view id="demo1" class="scroll-view-item_H demo-text-1">1</view>
 				<view id="demo2" class="scroll-view-item_H demo-text-2">2</view>
@@ -35,7 +36,7 @@
 	</view>
 </view>
 
-<view class="loading" hidden="{{scrollLoading}}">
+<view class="loading" hidden="{{scrollLoading}}" wx:if="{{!postsHidden}}">
 	<van-loading color="#1989fa" size="16px" class="loadingBar" text-size="14px">正在加载...</van-loading>
 </view>
 <view class="loading" hidden="{{!isEnd}}">

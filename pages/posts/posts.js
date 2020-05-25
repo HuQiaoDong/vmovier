@@ -10,7 +10,7 @@ Page({
     cateId: null,
     scrollLoading: true,
     isEnd: false,
-
+    postData:null,
     toView: 'green'
   },
 
@@ -71,7 +71,7 @@ Page({
     }
   },
   getPostCardInfo(id) {
-    this.data.scrollLoading = true;
+    this.data.scrollLoading = false;
     wx.request({
       // https://api.kele8.cn/agent/
       url: 'https://app.vmovier.com/apiv3/post/getPostInCate?p=' + this.data.page + '&size=10&cateid=' + id,
@@ -81,12 +81,14 @@ Page({
       error: () => {
 
       },
-      complete: () => {}
-
+      complete: () => {
+        this.data.scrollLoading = true;
+      }
+      
     })
   },
   getPostByTab(tab) {
-    this.data.scrollLoading = true;
+    this.data.scrollLoading = false;
     wx.request({
       url: 'https://api.kele8.cn/agent/https://app.vmovier.com/apiv3/post/getPostByTab?p=' + this.data.page + '&size=10&tab=' + tab,
       success: (response) => {
@@ -95,7 +97,9 @@ Page({
       error: () => {
 
       },
-      complete: () => {}
+      complete: () => {
+        this.data.scrollLoading = true;
+      }
 
     })
   },
@@ -138,7 +142,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if (this.data.isEnd == false) {
+    if (this.data.isEnd == false && !this.data.postsHidden) {
       console.log('触底加载');
       this.setData({
         page: this.data.page + 1,

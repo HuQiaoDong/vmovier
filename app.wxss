@@ -8,4 +8,26 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+.loading{
+  height: 25px;
+  background: white;
+  display: flex;
+}
+.loading .loadingBar{
+  /* width: 60px; */
+  margin: auto;
+  color: #1989fa;
+}
+.loading text{
+  margin: auto;
+  color: #888888;
+  font-size: 14px; 
+}
+.findContent{
+  color: white;
+  background: black;
+}
+.title{
+  padding: 10px 0px;
+}
 @import './style/weui.wxss'

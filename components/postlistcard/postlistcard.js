@@ -48,11 +48,13 @@ Component({
       })
       wx.request({
         // https://api.kele8.cn/agent/
-        url: `https://app.vmovier.com/apiv3/post/view?postid=${this.data.postId}`,
+        url: `https://api.kele8.cn/agent/https://app.vmovier.com/apiv3/post/view?postid=${this.data.postId}`,
         success:(response)=>{
           this.setData({
             postData:response.data.data,
           })
+          console.log('kk',response.data.data);
+          
           this.triggerEvent('trans-post-data',this.data.postData)
         },
         error:()=>{

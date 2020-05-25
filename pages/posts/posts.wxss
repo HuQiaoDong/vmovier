@@ -14,21 +14,7 @@
 #card4{
   color: #888888;
 }
-.loading{
-  height: 25px;
-  background: white;
-  display: flex;
-}
-.loading .loadingBar{
-  /* width: 60px; */
-  margin: auto;
-  color: #1989fa;
-}
-.loading text{
-  margin: auto;
-  color: #888888;
-  font-size: 14px;
-}
+
 .image{
   width: 100vw;
 }
@@ -40,6 +26,11 @@
   font-size: 14px;
   color: #333333;
   text-align: center;
+}
+.text-content .v-title{
+  font-weight: bold;
+  text-align: start;
+  margin-bottom: 8px;
 }
 .text-content .title{
   font-weight: bold;
@@ -73,4 +64,26 @@
   width: 40vw;
   height: 200rpx;
   margin-right: 10px;
+}
+.intro{
+  margin-bottom: 50px;
+}
+.author{
+  display: flex;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  padding: 8px 0px;
+  margin-bottom: 20px;
+}
+.author image{
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.author .roles{
+  text-align: start;
+}
+.author .author-name{
+  font-weight: bold;
 }

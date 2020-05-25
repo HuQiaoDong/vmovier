@@ -8,13 +8,13 @@
 }
 .card image{
   vertical-align: bottom;
-  filter: brightness(0.7);
+  filter: brightness(0.8);
   width: 100%;
 }
 .card .info{
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 10px;
+  left: 10px;
   /* margin: auto; */
 }
 .card .info .leibie{

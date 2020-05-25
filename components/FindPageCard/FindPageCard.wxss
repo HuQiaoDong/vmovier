@@ -1,0 +1,33 @@
+/* components/FindPageCard/FindPageCard.wxss */
+image{
+  vertical-align: middle;
+}
+swiper{
+  height: 240px !important;
+}
+.findCard{
+  position: relative;
+  transition: all 0.8s;
+  top: 0px;
+  width: 100vw;
+}
+/* .findCard.moveup{
+  position: absolute;
+  top: 0px;
+} */
+.findCard image{
+  filter: brightness(0.8);
+}
+.findCard .info{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+}
+.findCard .info .time{
+  font-size: 12px;
+}
+.findCard .info .title{
+
+}
+

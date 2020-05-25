@@ -1,0 +1,14 @@
+<!--components/FindPageCard/FindPageCard.wxml-->
+<slot></slot>
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<view bind:tap="routeToFindCardContentPage" data-postid="{{selectionData.postid}}"  id="fd{{selectionData.postid}}" style="top:-{{elTop}}px;z-index:{{repose ? repose :''}}" class="findCard {{animation?'moveup':''}}">
+
+<!-- class="findCard " -->
+  <image src="{{selectionData.image}}"></image>
+  <view class="info">
+    <view class="time">{{tools.parseCates(selectionData.cates)}} / {{tools.parseTime(selectionData.duration)}}</view>
+    <view class="title">{{selectionData.title}}</view>
+  </view>
+</view>
+
+	<!-- <view  bindtap="routeToContentPage" data-card="{{cardData}}" id="{{elId}}" > -->
